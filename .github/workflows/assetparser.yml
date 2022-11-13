@@ -18,8 +18,8 @@ jobs:
 
       - name: Preparing MIUI build
         run: |
-          python3 parser.py
-          #| wget -O miui.tgz
-          #tar -xzf miui.tgz
+          export MIUI_LATEST_TGZ="$(python3 parser.py)"
+          wget -O miui.tgz $MIUI_LATEST_TGZ
+          tar -xzf miui.tgz
 
       # soon™
