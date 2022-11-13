@@ -19,7 +19,8 @@ jobs:
       - name: Preparing MIUI build
         run: |
           export MIUI_LATEST_TGZ="$(python3 parser.py)"
-          axel -n $(nproc --all) -o miui.tgz $MIUI_LATEST_TGZ
+          axel -n $(nproc --all) -o miui.tgz $MIUI_LATEST_TGZ > logs.txt
           tar -xzf miui.tgz
+          tree
 
       # soon™
